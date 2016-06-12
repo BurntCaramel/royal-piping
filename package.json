@@ -1,0 +1,23 @@
+{
+  "name": "royal-piping",
+  "version": "0.1.0",
+  "description": "Wireframes in React",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/RoyalIcing/royal-piping.git"
+  },
+  "keywords": [
+    "wireframe",
+    "react"
+  ],
+  "author": "Patrick Smith",
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/RoyalIcing/royal-piping/issues"
+  },
+  "homepage": "https://github.com/RoyalIcing/royal-piping#readme"
+}
