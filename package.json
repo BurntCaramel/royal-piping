@@ -2,20 +2,38 @@
   "name": "royal-piping",
   "version": "0.1.0",
   "description": "Wireframes in React",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "jsnext:main": "es6/index.js",
+  "files": [
+    "css",
+    "es6",
+    "lib",
+    "umd"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "nwb build",
+    "clean": "nwb clean",
+    "start": "nwb serve",
+    "test": "nwb test",
+    "test:watch": "nwb test --server"
   },
+  "dependencies": {
+    "react-sow": "^0.2.2"
+  },
+  "peerDependencies": {
+    "react": "15.x"
+  },
+  "devDependencies": {
+    "nwb": "0.11.x",
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0"
+  },
+  "author": "Patrick Smith",
+  "private": true,
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/RoyalIcing/royal-piping.git"
   },
-  "keywords": [
-    "wireframe",
-    "react"
-  ],
-  "author": "Patrick Smith",
-  "private": true,
   "bugs": {
     "url": "https://github.com/RoyalIcing/royal-piping/issues"
   },
