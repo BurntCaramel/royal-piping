@@ -22,11 +22,41 @@ const content1 = [
 			},
 			{
 				title: 'Creativity, Inc'
+			},
+			{
+				title: 'The Hobbit'
+			},
+			{
+				title: 'The Jungle Book'
+			},
+			{
+				title: 'Mindset'
+			},
+			{
+				title: 'Sprint'
+			},
+			{
+				title: 'Creativity, Inc'
+			},
+			{
+				title: 'The Hobbit'
+			},
+			{
+				title: 'The Jungle Book'
+			},
+			{
+				title: 'Mindset'
+			},
+			{
+				title: 'Sprint'
+			},
+			{
+				title: 'Creativity, Inc'
 			}
 		]
 	},
 	{
-		type: 'nav',
+		type: 'tabs',
 		items: [
 			{
 				title: 'My Books'

@@ -4,6 +4,7 @@ export default Table;
 
 import React from 'react';
 import Box from './Box';
+import Scrollable from './Scrollable';
 import Text from './Text';
 function Table(_ref) {
 	var items = _ref.items;
@@ -11,9 +12,13 @@ function Table(_ref) {
 	return React.createElement(
 		Box,
 		{ column: true, grow: 1 },
-		items.map(function (item) {
-			return React.createElement(TableCell, item);
-		})
+		React.createElement(
+			Scrollable,
+			null,
+			items.map(function (item) {
+				return React.createElement(TableCell, item);
+			})
+		)
 	);
 }
 
