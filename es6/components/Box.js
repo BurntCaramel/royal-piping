@@ -7,7 +7,7 @@ function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in ob
 import React from 'react';
 import sow from 'react-sow';
 
-import flexStyler from './stylers/flex';
+import * as stylers from '../stylers';
 
 var borderStyler = sow(function (_ref) {
 	var _ref$border = _ref.border;
@@ -24,7 +24,7 @@ var backgroundStyler = sow(function (_ref2) {
 	return Object.assign({}, backgroundColor ? { backgroundColor: backgroundColor } : {});
 });
 
-var styler = sow.combine([flexStyler, borderStyler, backgroundStyler]);
+var styler = sow.combine([stylers.boxSizing, stylers.flex, stylers.margin, stylers.padding, borderStyler, backgroundStyler]);
 function Box(_ref3) {
 	var children = _ref3.children;
 	var url = _ref3.url;

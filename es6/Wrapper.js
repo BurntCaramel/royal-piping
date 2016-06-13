@@ -2,7 +2,7 @@
 
 export default Wrapper;
 import React from 'react';
-import Box from './Box';
+import Box from './components/Box';
 function Wrapper(_ref) {
 	var children = _ref.children;
 	var _ref$width = _ref.width;

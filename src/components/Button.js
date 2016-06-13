@@ -2,9 +2,9 @@ import React from 'react'
 import Box from './Box'
 import Text from './Text'
 
-export default function Button({ title }) {
+export default function Button({ title, ...boxProps }) {
 	return (
-		<Box>
+		<Box { ...boxProps }>
 			<Text>
 				{ title }
 			</Text>

@@ -1,7 +1,7 @@
 import React from 'react'
 import sow from 'react-sow'
 
-import flexStyler from './stylers/flex'
+import * as stylers from '../stylers'
 
 const borderStyler = sow(({ border = true, borderWidth = 1 }) => Object.assign({},
 	//border ? { borderWidth, borderStyle: 'solid', borderColor: '#111', margin: -borderWidth } : {}
@@ -13,7 +13,10 @@ const backgroundStyler = sow(({ backgroundColor }) => Object.assign({},
 ))
 
 const styler = sow.combine([
-	flexStyler,
+	stylers.boxSizing,
+	stylers.flex,
+	stylers.margin,
+	stylers.padding,
 	borderStyler,
 	backgroundStyler
 ])

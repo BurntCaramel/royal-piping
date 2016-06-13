@@ -9,49 +9,92 @@ const content1 = [
 		type: 'table',
 		items: [
 			{
-				title: 'The Hobbit'
+				text: 'The Hobbit',
+				detailText: 'Lorem ipsum'
 			},
 			{
-				title: 'The Jungle Book'
+				text: 'The Jungle Book'
 			},
 			{
-				title: 'Mindset'
+				text: 'Mindset',
+				detailText: 'Lorem ipsum'
 			},
 			{
-				title: 'Sprint'
+				text: 'Sprint'
 			},
 			{
-				title: 'Creativity, Inc'
+				text: 'Creativity, Inc'
 			},
 			{
-				title: 'The Hobbit'
+				text: 'The Hobbit'
 			},
 			{
-				title: 'The Jungle Book'
+				text: 'The Jungle Book'
 			},
 			{
-				title: 'Mindset'
+				text: 'Mindset'
 			},
 			{
-				title: 'Sprint'
+				text: 'Sprint'
 			},
 			{
-				title: 'Creativity, Inc'
+				text: 'Creativity, Inc'
 			},
 			{
-				title: 'The Hobbit'
+				text: 'The Hobbit'
 			},
 			{
-				title: 'The Jungle Book'
+				text: 'The Jungle Book'
 			},
 			{
-				title: 'Mindset'
+				text: 'Mindset'
 			},
 			{
-				title: 'Sprint'
+				text: 'Sprint'
 			},
 			{
-				title: 'Creativity, Inc'
+				text: 'Creativity, Inc'
+			}
+		]
+	},
+	{
+		type: 'tabs',
+		items: [
+			{
+				title: 'My Books',
+				selected: true
+			},
+			{
+				title: 'Featured'
+			},
+			{
+				title: 'Top Charts'
+			},
+			{
+				title: 'Search'
+			},
+			{
+				title: 'Purchased'
+			}
+		]
+	}
+]
+
+const content2 = [
+	{
+		type: 'collection',
+		groups: [
+			{
+				title: 'Yesterday',
+				items: [
+					{}, {}, {}, {}, {}
+				]
+			},
+			{
+				title: 'Today',
+				items: [
+					{}, {}, {}
+				]
 			}
 		]
 	},
@@ -62,7 +105,8 @@ const content1 = [
 				title: 'My Books'
 			},
 			{
-				title: 'Featured'
+				title: 'Featured',
+				selected: true
 			},
 			{
 				title: 'Top Charts'
@@ -115,7 +159,12 @@ const Demo = React.createClass({
 					}</li>
 				)) }
 			</ul>
-      <Component content={ content1 } deviceInfo={ deviceInfo } />
+			<div style={{ float: 'left', marginLeft: 10, marginRight: 10 }}>
+				<Component content={ content1 } deviceInfo={ deviceInfo } />
+			</div>
+			<div style={{ float: 'left', marginLeft: 10, marginRight: 10 }}>
+				<Component content={ content2 } deviceInfo={ deviceInfo } />
+			</div>
     </div>
   }
 })

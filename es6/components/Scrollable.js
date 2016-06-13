@@ -9,7 +9,7 @@ function Scrollable(_ref) {
 
 	return React.createElement(
 		'div',
-		{ style: { overflow: 'auto' } },
+		{ style: { overflow: 'auto', flexGrow: 1 } },
 		children
 	);
 }
