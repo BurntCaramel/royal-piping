@@ -12,7 +12,7 @@ function Wrapper(_ref) {
 
 	return React.createElement(
 		Box,
-		{ column: true, width: width, height: height },
+		{ column: true, width: width, height: height, transitionAll: true },
 		children
 	);
 }

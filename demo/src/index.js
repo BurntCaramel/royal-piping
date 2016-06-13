@@ -170,3 +170,5 @@ const Demo = React.createClass({
 })
 
 render(<Demo/>, document.querySelector('#demo'))
+
+document.querySelector('h1').remove()

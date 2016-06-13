@@ -10,12 +10,13 @@ import Wrapper from './Wrapper';
 function RoyalPiping(_ref) {
 	var _ref$content = _ref.content;
 	var content = _ref$content === undefined ? [] : _ref$content;
-	var deviceInfo = _ref.deviceInfo;
+	var _ref$deviceInfo = _ref.deviceInfo;
+	var deviceInfo = _ref$deviceInfo === undefined ? {} : _ref$deviceInfo;
 
 	return React.createElement(
 		Wrapper,
 		deviceInfo,
-		content.map(function (_ref2) {
+		[].concat(content).map(function (_ref2) {
 			var type = _ref2.type;
 
 			var props = _objectWithoutProperties(_ref2, ['type']);

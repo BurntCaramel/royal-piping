@@ -17,6 +17,7 @@ const styler = sow.combine([
 	stylers.flex,
 	stylers.margin,
 	stylers.padding,
+	stylers.transition,
 	borderStyler,
 	backgroundStyler
 ])
