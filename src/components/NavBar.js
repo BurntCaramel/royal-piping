@@ -6,12 +6,12 @@ import Button from './Button'
 export default function NavBar({ title, stackLevel = 0 }) {
 	return (
 		<Box row>
-			{ stackLevel > 0 && <Button>Back</Button> }
+			{ stackLevel > 0 && <Button title='Back' /> }
 			<Text>
 				{ title }
 			</Text>
 			<Box>
-				<Button>Edit</Button>
+				<Button title='Edit' />
 			</Box>
 		</Box>
 	)

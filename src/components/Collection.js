@@ -9,8 +9,8 @@ export default function Collection({ groups }) {
 	return (
 		<Box column grow={ 1 }>
 			<Scrollable>{
-				groups.map((group) => (
-					<CollectionGroup { ...group } />
+				groups.map((group, index) => (
+					<CollectionGroup key={ index } { ...group } />
 				))
 			}</Scrollable>
 		</Box>

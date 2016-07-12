@@ -121,6 +121,26 @@ const content2 = [
 	}
 ]
 
+const content3 = [
+	content2,
+	[
+		{
+			type: 'alert',
+			title: 'Ask a question?',
+			message: 'Would you like to do this or that?',
+			actions: [
+				{
+					title: 'Cancel',
+					preferred: true
+				},
+				{
+					title: 'This'
+				}
+			]
+		}
+	]
+]
+
 const baseStyler = sow({
 	fontFamily: 'sans-serif'
 })
@@ -164,6 +184,9 @@ const Demo = React.createClass({
 			</div>
 			<div style={{ float: 'left', marginLeft: 10, marginRight: 10 }}>
 				<Component content={ content2 } deviceInfo={ deviceInfo } />
+			</div>
+			<div style={{ float: 'left', marginLeft: 10, marginRight: 10 }}>
+				<Component layered content={ content3 } deviceInfo={ deviceInfo } />
 			</div>
     </div>
   }

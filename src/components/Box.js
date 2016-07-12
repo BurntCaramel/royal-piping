@@ -15,6 +15,7 @@ const backgroundStyler = sow(({ backgroundColor }) => Object.assign({},
 const styler = sow.combine([
 	stylers.boxSizing,
 	stylers.flex,
+	stylers.position,
 	stylers.margin,
 	stylers.padding,
 	stylers.transition,

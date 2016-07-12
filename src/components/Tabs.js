@@ -4,12 +4,12 @@ import Text from './Text'
 
 const height = 49
 
-export default function Nav({ items, showIcons = true }) {
+export default function Tab({ items, showIcons = true }) {
 	return (
 		<Box row shrink={ 0 }>
 			{
-				items.map((item) => (
-					<NavItem { ...item } showIcon={ showIcons } />
+				items.map((item, index) => (
+					<TabItem key={ index } { ...item } showIcon={ showIcons } />
 				))
 			}
 		</Box>
@@ -24,7 +24,7 @@ const nonselectedIcon = (
 	<Box width={ 30 } height={ 30 } />
 )
 
-function NavItem({ title, url, selected, showIcon }) {
+function TabItem({ title, url, selected, showIcon }) {
 	return (
 		<Box url={ url } column alignItems='center' grow={ 1 } height={ height }>
 			{ showIcon &&

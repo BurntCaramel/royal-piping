@@ -7,8 +7,8 @@ export default function Table({ items, showIcons = true }) {
 	return (
 		<Box column grow={ 1 }>
 			<Scrollable>{
-				items.map((item) => (
-					<TableCell { ...item } showIcon={ showIcons } />
+				items.map((item, index) => (
+					<TableCell key={ index } { ...item } showIcon={ showIcons } />
 				))
 			}</Scrollable>
 		</Box>
