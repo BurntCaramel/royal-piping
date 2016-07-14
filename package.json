@@ -1,6 +1,6 @@
 {
   "name": "royal-piping",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Wireframes in React",
   "main": "lib/index.js",
   "jsnext:main": "es6/index.js",
@@ -18,7 +18,7 @@
     "test:watch": "nwb test --server"
   },
   "dependencies": {
-    "react-sow": "^0.3.0-b2"
+    "react-sow": "^0.3.0-b3"
   },
   "peerDependencies": {
     "react": "15.x"
