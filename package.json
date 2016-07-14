@@ -18,7 +18,7 @@
     "test:watch": "nwb test --server"
   },
   "dependencies": {
-    "react-sow": "^0.2.2"
+    "react-sow": "^0.3.0-b2"
   },
   "peerDependencies": {
     "react": "15.x"

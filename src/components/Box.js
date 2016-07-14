@@ -3,9 +3,9 @@ import sow from 'react-sow'
 
 import * as stylers from '../stylers'
 
-const borderStyler = sow(({ border = true, borderWidth = 1 }) => Object.assign({},
+const outlineStyler = sow(({ border = false, borderWidth = 1 }) => Object.assign({},
 	//border ? { borderWidth, borderStyle: 'solid', borderColor: '#111', margin: -borderWidth } : {}
-	border ? { boxShadow: `0 0 ${borderWidth}px #111` } : {}
+	border ? { boxShadow: `inset 0 0 ${borderWidth}px #111` } : {}
 ))
 
 const backgroundStyler = sow(({ backgroundColor }) => Object.assign({},
@@ -19,7 +19,7 @@ const styler = sow.combine([
 	stylers.margin,
 	stylers.padding,
 	stylers.transition,
-	borderStyler,
+	outlineStyler,
 	backgroundStyler
 ])
 

@@ -16,17 +16,18 @@ export default function Tab({ items, showIcons = true }) {
 	)
 }
 
-const selectedIcon = (
-	<Box width={ 30 } height={ 30 } backgroundColor='#555' border={ false } />
+const iconInset = 4
+
+const Icon = ({ selected }) => (
+	<Box margin={ iconInset } width={ 30 - (iconInset * 2) } height={ 30 - (iconInset * 2) } border={ !selected } backgroundColor={ selected ? '#555' : null } />
 )
 
-const nonselectedIcon = (
-	<Box width={ 30 } height={ 30 } />
-)
+const selectedIcon = Icon({ selected: true })
+const nonselectedIcon = Icon({ selected: false })
 
 function TabItem({ title, url, selected, showIcon }) {
 	return (
-		<Box url={ url } column alignItems='center' grow={ 1 } height={ height }>
+		<Box border url={ url } column alignItems='center' grow={ 1 } height={ height }>
 			{ showIcon &&
 				(selected ? selectedIcon : nonselectedIcon)
 			}

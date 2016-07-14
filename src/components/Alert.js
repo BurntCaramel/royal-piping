@@ -1,4 +1,5 @@
 import React from 'react'
+import rgba from 'react-sow/rgba'
 import Box from './Box'
 import Text from './Text'
 import Button from './Button'
@@ -15,8 +16,8 @@ export default function Alert({ title, message, actions }) {
 	))
 
 	return (
-		<Box row border={ false } grow={ 1 } alignItems='center'>
-			<Box column grow={ 1 } margin={ 20 } backgroundColor='white'>
+		<Box row grow={ 1 } alignItems='center'>
+			<Box column border grow={ 1 } margin={ 20 } backgroundColor={ rgba.whiteValue(255, 0.94) }>
 				<Box column grow={ 1 } padding={ 20 } border={ false }>
 					<Text align='center' fontWeight='bold' lineHeight={ 1.4 }>
 						{ title }

@@ -19,7 +19,7 @@ export default function Collection({ groups }) {
 
 function CollectionGroup({ items, itemsPerRow = 4, title }) {
 	return (
-		<Box column margin={{ top: 24 }} border={ false }>
+		<Box column margin={{ top: 24, bottom: gutter * 2 }} border={ false }>
 			{ title &&
 				<Text margin={{ left: 12, bottom: 12 }}>{ title }</Text>
 			}
@@ -32,10 +32,10 @@ function CollectionGroup({ items, itemsPerRow = 4, title }) {
 	)
 }
 
-function CollectionCell({ span }) {
+function CollectionCell({ span, backgroundColor = '#555' }) {
 	return (
 		<Box width={`${span * 100}%`} padding={ gutter } border={ false }>
-			<Box padding={{ bottom: '100%' }} border={ false } backgroundColor='#555' />
+			<Box padding={{ bottom: '100%' }} border={ false } backgroundColor={ backgroundColor } />
 		</Box>
 	)
 }
