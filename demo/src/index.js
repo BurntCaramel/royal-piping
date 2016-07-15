@@ -1,8 +1,9 @@
 import React from 'react'
-import {render} from 'react-dom'
+import { render } from 'react-dom'
 import sow from 'react-sow'
 
-import Component from '../../src'
+import Screen from '../../src/Screen'
+import * as kit from '../../src/kits/ios'
 
 const content1 = [
 	{
@@ -147,6 +148,45 @@ const content3 = [
 	]
 ]
 
+const story1 = [
+	{
+		type: 'button',
+		title: 'Next'
+	},
+	{
+		type: 'alert',
+		title: 'Ask a question?',
+		message: 'Would you like to do this or that?',
+		actions: [
+			{
+				title: 'Cancel',
+				preferred: true
+			},
+			{
+				title: 'This'
+			}
+		]
+	},
+	{
+		type: 'alert',
+		title: 'Four choices?',
+		actions: [
+			{
+				title: 'One'
+			},
+			{
+				title: 'Two'
+			},
+			{
+				title: 'Three'
+			},
+			{
+				title: 'Four'
+			}
+		]
+	}
+]
+
 const baseStyler = sow({
 	fontFamily: 'sans-serif'
 })
@@ -186,13 +226,13 @@ const Demo = React.createClass({
 				)) }
 			</ul>
 			<div style={{ float: 'left', marginLeft: 10, marginRight: 10 }}>
-				<Component content={ content1 } deviceInfo={ deviceInfo } />
+				<Screen content={ content1 } deviceInfo={ deviceInfo } kit={ kit } />
 			</div>
 			<div style={{ float: 'left', marginLeft: 10, marginRight: 10 }}>
-				<Component content={ content2 } deviceInfo={ deviceInfo } />
+				<Screen content={ content2 } deviceInfo={ deviceInfo } kit={ kit } />
 			</div>
 			<div style={{ float: 'left', marginLeft: 10, marginRight: 10 }}>
-				<Component layered content={ content3 } deviceInfo={ deviceInfo } />
+				<Screen layered content={ content3 } deviceInfo={ deviceInfo } kit={ kit } />
 			</div>
     </div>
   }

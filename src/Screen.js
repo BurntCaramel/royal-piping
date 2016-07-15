@@ -1,22 +1,13 @@
 import React from 'react'
-import * as typeToComponent from './kits/ios'
 import ScreenLayer from './ScreenLayer'
+import renderContentList from './renderContentList'
 import Box from './components/Box'
-
-function renderContentList(content) {
-	return content.map(({ type, ...props }, index) => {
-		const Component = typeToComponent[type]
-		if (!Component) {
-			return `Unknown type ${type}`
-		}
-		return <Component key={ index } { ...props} />
-	})
-}
 
 export default function Screen({
 	content = [],
 	layered = false,
-	deviceInfo = {}
+	deviceInfo = {},
+	kit
 }) {
 	return (
 		<div style={{ position: 'relative' }}>{
@@ -27,13 +18,13 @@ export default function Screen({
 						zIndex={ index }
 						border={ false }
 						absolute={{ top: 0, bottom: 0, left: 0, right: 0 }}
-						children={ renderContentList(content) }
+						children={ renderContentList(kit, content) }
 					/>
 				))
 			) : (
 				<ScreenLayer
 					{ ...deviceInfo }
-					children={ renderContentList(content) }
+					children={ renderContentList(kit, content) }
 				/>
 			)
 		}</div>
