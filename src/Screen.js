@@ -1,6 +1,6 @@
 import React from 'react'
 import * as typeToComponent from './kits/ios'
-import Wrapper from './Wrapper'
+import ScreenLayer from './ScreenLayer'
 import Box from './components/Box'
 
 function renderContentList(content) {
@@ -13,7 +13,7 @@ function renderContentList(content) {
 	})
 }
 
-export default function RoyalPiping({
+export default function Screen({
 	content = [],
 	layered = false,
 	deviceInfo = {}
@@ -22,7 +22,7 @@ export default function RoyalPiping({
 		<div style={{ position: 'relative' }}>{
 			layered ? (
 				content.map((content, index) => (
-					<Wrapper key={ index }
+					<ScreenLayer key={ index }
 						{ ...deviceInfo }
 						zIndex={ index }
 						border={ false }
@@ -31,7 +31,7 @@ export default function RoyalPiping({
 					/>
 				))
 			) : (
-				<Wrapper
+				<ScreenLayer
 					{ ...deviceInfo }
 					children={ renderContentList(content) }
 				/>
