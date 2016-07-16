@@ -1,6 +1,6 @@
 {
   "name": "royal-piping",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Wireframes in React",
   "main": "lib/index.js",
   "jsnext:main": "es6/index.js",
