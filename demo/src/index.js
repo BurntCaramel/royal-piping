@@ -214,6 +214,43 @@ const story1 = [
 		text: 'The Hobbit',
 		detailText: 'Lorem ipsum',
 		showIcon: true
+	},
+	{
+		type: 'alert',
+		actionSheet: true,
+		title: 'Remove account?',
+		actions: [
+			{
+				title: 'Cancel',
+				preferred: true
+			},
+			{
+				title: 'Archive'
+			},
+			{
+				title: 'Destroy',
+				destructive: true
+			}
+		]
+	},
+	{
+		type: 'alert',
+		actionSheet: true,
+		actions: [
+			{
+				title: 'Cancel',
+				preferred: true
+			},
+			{
+				title: 'Email'
+			},
+			{
+				title: 'Post on Facebook'
+			},
+			{
+				title: 'Post on Twitter'
+			}
+		]
 	}
 ]
 
