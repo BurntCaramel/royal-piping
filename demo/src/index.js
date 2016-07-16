@@ -152,11 +152,6 @@ const content3 = [
 
 const story1 = [
 	{
-		type: 'button',
-		title: 'Next',
-		big: true
-	},
-	{
 		type: 'alert',
 		title: 'Ask a question?',
 		message: 'Would you like to do this or that?',
@@ -187,6 +182,11 @@ const story1 = [
 				title: 'Four'
 			}
 		]
+	},
+	{
+		type: 'button',
+		title: 'Sign Up',
+		big: true
 	},
 	{
 		type: 'alert',

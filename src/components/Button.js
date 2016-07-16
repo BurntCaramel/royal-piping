@@ -6,6 +6,8 @@ export default function Button({ title, enabled = true, align = 'center', size, 
 	const extraProps = {}
 	if (big) {
 		extraProps.padding = 20
+		extraProps.cornerRadius = 12.5
+		size = 20
 	}
 
 	return (

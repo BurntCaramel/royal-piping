@@ -48,7 +48,7 @@ export default function Alert({ title, message, textFields, actions }) {
 
 	return (
 		<Box row grow={ 1 } alignItems='center'>
-			<Box column border grow={ 1 } margin={ 20 } backgroundColor={ rgba.whiteValue(255, 0.94) }>
+			<Box column border grow={ 1 } margin={ 20 } overflow='hidden' backgroundColor={ rgba.whiteValue(255, 0.94) } cornerRadius={ 12 }>
 				<Box column grow={ 1 } padding={ 20 } border={ false }>
 					<Text align='center' fontWeight='bold' lineHeight={ 1.4 }>
 						{ title }
