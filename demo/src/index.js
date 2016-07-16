@@ -3,7 +3,9 @@ import { render } from 'react-dom'
 import sow from 'react-sow'
 
 import Screen from '../../src/Screen'
+import ActionList from '../../src/ActionList'
 import * as kit from '../../src/kits/ios'
+import { makeMap as makeDevicesMap } from '../../src/devices/apple'
 
 const content1 = [
 	{
@@ -151,7 +153,8 @@ const content3 = [
 const story1 = [
 	{
 		type: 'button',
-		title: 'Next'
+		title: 'Next',
+		big: true
 	},
 	{
 		type: 'alert',
@@ -184,18 +187,42 @@ const story1 = [
 				title: 'Four'
 			}
 		]
+	},
+	{
+		type: 'alert',
+		title: 'Enter account details',
+		textFields: [
+			{
+				title: 'User name'
+			},
+			{
+				title: 'Password'
+			}
+		],
+		actions: [
+			{
+				title: 'Sign in'
+			},
+			{
+				title: 'Cancel',
+				preferred: true
+			}
+		]
+	},
+	{
+		type: 'tableCell',
+		text: 'The Hobbit',
+		detailText: 'Lorem ipsum',
+		showIcon: true
 	}
 ]
 
 const baseStyler = sow({
-	fontFamily: 'sans-serif'
+	fontFamily: 'sans-serif',
+	maxWidth: '100vw'
 })
 
-const devices = new Map([
-	["iphone5", { title: 'iPhone 5', width: 320, height: 568 }],
-	["iphone6", { title: 'iPhone 6', width: 375, height: 667 }],
-	["iphone6plus", { title: 'iPhone 6 Plus', width: 414, height: 736 }]
-])
+const devices = makeDevicesMap()
 
 const Demo = React.createClass({
 	getInitialState: () => ({
@@ -212,7 +239,7 @@ const Demo = React.createClass({
 
     return <div { ...baseStyler() }>
       <h1>royal-piping Demo</h1>
-			<ul style={{ listStyle: 'none' }}>
+			<ul key='devices' style={{ listStyle: 'none' }}>
 				{ Array.from(devices.entries()).map(([device, { title }]) => (
 					<li
 						onClick={ this.onChangeDevice.bind(this, device) }
@@ -225,14 +252,17 @@ const Demo = React.createClass({
 					}</li>
 				)) }
 			</ul>
-			<div style={{ float: 'left', marginLeft: 10, marginRight: 10 }}>
+			<div key='content1' style={{ float: 'left', margin: 10 }}>
 				<Screen content={ content1 } deviceInfo={ deviceInfo } kit={ kit } />
 			</div>
-			<div style={{ float: 'left', marginLeft: 10, marginRight: 10 }}>
+			<div key='content2' style={{ float: 'left', margin: 10 }}>
 				<Screen content={ content2 } deviceInfo={ deviceInfo } kit={ kit } />
 			</div>
-			<div style={{ float: 'left', marginLeft: 10, marginRight: 10 }}>
+			<div key='content3' style={{ float: 'left', margin: 10 }}>
 				<Screen layered content={ content3 } deviceInfo={ deviceInfo } kit={ kit } />
+			</div>
+			<div key='story1' style={{ float: 'left', margin: 10 }}>
+				<ActionList content={ story1 } deviceInfo={ deviceInfo } kit={ kit } />
 			</div>
     </div>
   }
