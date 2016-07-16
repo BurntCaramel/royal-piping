@@ -1,9 +1,9 @@
 import sow from 'react-sow'
 
 export default sow(({
-	row = false, column = false, wrap = false, alignItems, basis, grow, shrink, width, height
+	row = false, column = false, wrap = false, reverse = false, alignItems, basis, grow, shrink, width, height
 }) => Object.assign({},
-	(row || column) && { display: 'flex', flexDirection : column ? 'column' : 'row' },
+	(row || column) && { display: 'flex', flexDirection: column ? (reverse ? 'column-reverse' : 'column') : (reverse ? 'row-reverse' : 'row') },
 	{ flexWrap: wrap ? 'wrap' : 'nowrap' },
 	alignItems && { alignItems },
 	basis != null && { flexBasis: basis },
