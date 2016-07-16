@@ -16,7 +16,7 @@ export default function Screen({
 					<ScreenLayer key={ index }
 						{ ...deviceInfo }
 						zIndex={ index }
-						border={ false }
+						outline={ false }
 						absolute={{ top: 0, bottom: 0, left: 0, right: 0 }}
 						children={ renderContentList(kit, content) }
 					/>

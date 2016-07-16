@@ -35,7 +35,7 @@ export default function Alert({ title, message, textFields, actions }) {
 			title
 		}, index) => (
 			<Box key={ index }
-				border
+				outline
 				padding={ 6 }
 			>
 				<Text size={ 13 }>
@@ -48,8 +48,8 @@ export default function Alert({ title, message, textFields, actions }) {
 
 	return (
 		<Box row grow={ 1 } alignItems='center'>
-			<Box column border grow={ 1 } margin={ 20 } overflow='hidden' backgroundColor={ rgba.whiteValue(255, 0.94) } cornerRadius={ 12 }>
-				<Box column grow={ 1 } padding={ 20 } border={ false }>
+			<Box column outline grow={ 1 } margin={ 20 } overflow='hidden' backgroundColor={ rgba.whiteValue(255, 0.94) } cornerRadius={ 12 }>
+				<Box column grow={ 1 } padding={ 20 }>
 					<Text align='center' fontWeight='bold' lineHeight={ 1.4 }>
 						{ title }
 					</Text>

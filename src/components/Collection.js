@@ -19,11 +19,11 @@ export default function Collection({ groups }) {
 
 function CollectionGroup({ items, itemsPerRow = 4, title }) {
 	return (
-		<Box column margin={{ top: 24, bottom: gutter * 2 }} border={ false }>
+		<Box column margin={{ top: 24, bottom: gutter * 2 }}>
 			{ title &&
 				<Text margin={{ left: 12, bottom: 12 }}>{ title }</Text>
 			}
-			<Box row wrap alignItems='flex-start' margin={ -gutter } border={ false }>{
+			<Box row wrap alignItems='flex-start' margin={ -gutter }>{
 				items.map((item, index) => (
 					<CollectionCell key={ index }
 						{ ...item }
@@ -37,8 +37,8 @@ function CollectionGroup({ items, itemsPerRow = 4, title }) {
 
 function CollectionCell({ span, backgroundColor = '#555' }) {
 	return (
-		<Box width={`${span * 100}%`} padding={ gutter } border={ false }>
-			<Box padding={{ bottom: '100%' }} border={ false } backgroundColor={ backgroundColor } />
+		<Box width={`${span * 100}%`} padding={ gutter }>
+			<Box padding={{ bottom: '100%' }} backgroundColor={ backgroundColor } />
 		</Box>
 	)
 }
