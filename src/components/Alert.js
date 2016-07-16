@@ -7,7 +7,7 @@ import Button from './Button'
 function TextBlock({ title, message, trailingElement }) {
 	return (
 		<Box column grow={ 1 } padding={ 20 }>
-			<Text align='center' fontWeight='bold' lineHeight={ 1.4 }>
+			<Text align='center' size={ 17 } fontWeight={ 500 } lineHeight={ 1.4 }>
 				{ title }
 			</Text>
 			<Text align='center' size={ 13 } lineHeight={ 1.3 }>
@@ -18,7 +18,7 @@ function TextBlock({ title, message, trailingElement }) {
 	);
 }
 
-function ButtonsList({ actions, reverse, allowColumn = false }) {
+function ButtonsList({ actions, reverse, big = false, allowColumn = false }) {
 	const actionCount = actions.length
 	const buttonFlexBasis = (allowColumn && actionCount <= 2) ? `${ 1.0 / actionCount }%` : 'auto'
 
@@ -30,11 +30,13 @@ function ButtonsList({ actions, reverse, allowColumn = false }) {
 		<Button key={ index }
 			title={ title }
 			enabled={ enabled }
-			fontWeight={ preferred ? 'bold' : 'normal' }
+			big={ big }
+			cornerRadius={ 0 }
+			fontWeight={ preferred ? 500 : 400 }
 			grow={ 1 }
 			basis={ buttonFlexBasis }
 			align='center'
-			padding={ 8 }
+			padding={{ top: 13, bottom: 13, left: 8, right: 8 }}
 		/>
 	))
 
@@ -51,7 +53,7 @@ function ActionSheetBlock({ title, message, actions, reverseActions = false }) {
 			{ (title || message) &&
 				<TextBlock title={ title } message={ message } />
 			}
-			<ButtonsList actions={ actions } reverse={ reverseActions } />
+			<ButtonsList big actions={ actions } reverse={ reverseActions } />
 		</Box>
 	)
 }
@@ -65,7 +67,7 @@ function ActionSheetBody({ title, message, actions }) {
 	if (firstAction.preferred) {
 		// Preferred action is separated
 		return (
-			<Box column reverse>
+			<Box column reverse grow={ 1 }>
 				<ActionSheetBlock actions={ [ firstAction ] } />
 				<ActionSheetBlock title={ title } message={ message } actions={ otherActions } />
 			</Box>

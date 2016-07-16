@@ -4,12 +4,14 @@ import * as stylers from '../stylers'
 
 const textStyler = sow(({
 	textAlign,
+	fontFamily,
 	fontSize,
 	lineHeight,
 	fontWeight,
 	enabled = true
 }) => ({
 	textAlign,
+	fontFamily,
 	fontSize,
 	lineHeight,
 	fontWeight,
@@ -25,9 +27,11 @@ const styler = sow.combine([
 	stylers.visibility
 ])
 
-export default function Text({ children, align, size, ...stylerProps }) {
+const appleFontFamily = `SF UI Display, sans-serif`;
+
+export default function Text({ children, align, size, fontFamily = appleFontFamily, ...stylerProps }) {
 	return (
-		<div { ...styler({ ...stylerProps, textAlign: align, fontSize: size }) }>
+		<div { ...styler({ ...stylerProps, textAlign: align, fontSize: size, fontFamily }) }>
 			{ children }
 		</div>
 	)

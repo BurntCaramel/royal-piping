@@ -2,7 +2,7 @@ import React from 'react'
 import Box from './Box'
 import Text from './Text'
 
-export default function Button({ title, enabled = true, align = 'center', size, fontWeight, outline = true, big = false, ...boxProps }) {
+export default function Button({ title, enabled = true, align = 'center', size = 17, fontWeight, outline = true, big = false, ...boxProps }) {
 	const extraProps = {}
 	if (big) {
 		extraProps.padding = 20
