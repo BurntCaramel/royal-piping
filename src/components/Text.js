@@ -1,9 +1,6 @@
 import React from 'react'
 import sow from 'react-sow'
-import flexStyler from '../stylers/flex'
-import marginStyler from '../stylers/margin'
-import paddingStyler from '../stylers/padding'
-import visibilityStyler from '../stylers/visibility'
+import * as stylers from '../stylers'
 
 const textStyler = sow(({
 	textAlign,
@@ -21,10 +18,11 @@ const textStyler = sow(({
 
 const styler = sow.combine([
 	textStyler,
-	flexStyler,
-	marginStyler,
-	paddingStyler,
-	visibilityStyler
+	stylers.boxSizing,
+	stylers.flex,
+	stylers.margin,
+	stylers.padding,
+	stylers.visibility
 ])
 
 export default function Text({ children, align, size, ...stylerProps }) {

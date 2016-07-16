@@ -24,8 +24,11 @@ function CollectionGroup({ items, itemsPerRow = 4, title }) {
 				<Text margin={{ left: 12, bottom: 12 }}>{ title }</Text>
 			}
 			<Box row wrap alignItems='flex-start' margin={ -gutter } border={ false }>{
-				items.map((item) => (
-					<CollectionCell { ...item } span={ 1.0 / itemsPerRow} />
+				items.map((item, index) => (
+					<CollectionCell key={ index }
+						{ ...item }
+						span={ 1.0 / itemsPerRow}
+					/>
 				))
 			}</Box>
 		</Box>

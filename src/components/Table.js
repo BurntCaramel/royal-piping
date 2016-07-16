@@ -15,7 +15,7 @@ export default function Table({ items, showIcons = true }) {
 	)
 }
 
-function TableCell({ text, detailText, showIcon }) {
+export function TableCell({ text, detailText, showIcon }) {
 	return (
 		<Box row height={ 49 } alignItems='center'>
 			{ showIcon && <Box width={ 30 } height={ 30 } margin={{ left: 24, right: 24 }} backgroundColor='#555' border={ false } /> }
