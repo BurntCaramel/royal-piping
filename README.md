@@ -6,6 +6,8 @@
 
 Wireframes in React
 
+![Alt text](docs/gifs/royal-icing.gif?raw=true "iOS screens in Royal Icing")
+
 [build-badge]: https://img.shields.io/travis/user/repo/master.svg?style=flat-square
 [build]: https://travis-ci.org/user/repo
 
